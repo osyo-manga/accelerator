@@ -1,0 +1,17 @@
+# accelerator-vec-library
+# Copyright (c) 2010 osyo-manga : http://d.hatena.ne.jp/osyo-manga/
+# 
+
+import testing ;
+import os ;
+
+BOOST_ROOT = [ os.environ BOOST_ROOT ] ;
+
+project
+    : requirements <include>$(BOOST_ROOT) <include>"../../../"
+                   
+    ;
+
+test-suite "accelerator-vec" :
+    [ run value_type.cpp ]
+    ;
