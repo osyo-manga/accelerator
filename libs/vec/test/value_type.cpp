@@ -53,7 +53,7 @@ test_main(int argc, char* argv[]){
 	BOOST_CHECK(( boost::is_same<vec::value_type<my_vec >::type, float>::value ));
 	BOOST_CHECK(( boost::is_same<vec::value_type<my_vec2>::type, float>::value == false ));
 	BOOST_CHECK(( boost::is_same<vec::value_type<my_vec2>::type, int>::value ));
-	BOOST_CHECK(( boost::is_same<vec::value_type<my_vec3>::type, int>::value == false ));
+	BOOST_CHECK(( boost::is_same<vec::value_type<my_vec3>::type, double>::value ));
 	
 	return 0;
 }
