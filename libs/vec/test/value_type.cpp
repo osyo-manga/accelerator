@@ -5,7 +5,6 @@
 #include <boost/test/minimal.hpp>
 #include <boost/type_traits/is_same.hpp>
 
-#include <accelerator/vec/type_tratis/vec_traits.hpp>
 #include <accelerator/vec/type_tratis/value_type.hpp>
 
 struct my_vec{
@@ -35,13 +34,16 @@ struct vec_traits<my_vec3>{
 	typedef int value_type;
 };
 
+/*
 template<>
 struct value_type<my_vec3>{
 	typedef double type;
 };
+*/
 
 } }
 
+ACCELERATOR_VEC_VALUE_TYPE(my_vec3, double)
 
 int
 test_main(int argc, char* argv[]){

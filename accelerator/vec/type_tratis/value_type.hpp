@@ -26,8 +26,19 @@ struct value_type_impl<T, typename sfinae_helper<typename vec_traits<T>::value_t
 
 }  // namespace detail
 
+
 template<typename T>
 struct value_type : public detail::value_type_impl<T>{};
+
+
+#define ACCELERATOR_VEC_VALUE_TYPE(_class, _value_type)	\
+namespace accelerator { namespace vec {					\
+														\
+template<> struct value_type<_class>{					\
+	typedef _value_type type;							\
+};														\
+														\
+} } // namespace accelerator { namespace vec {
 
 
 } }  // namespace accelerator{ namespace vec{
