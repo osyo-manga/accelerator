@@ -12,7 +12,7 @@ struct sfinae_helper{
 	typedef void type;
 };
 
-template<int N>
+template<typename T, T N>
 struct sfinae_helper_value{
 	typedef void type;
 };

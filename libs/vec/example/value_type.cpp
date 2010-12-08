@@ -2,7 +2,7 @@
 // Copyright (c) 2010 osyo-manga : http://d.hatena.ne.jp/osyo-manga/
 //
 
-#include <accelerator/vec/type_tratis/value_type.hpp>
+#include <accelerator/vec/type_traits/value_type.hpp>
 
 #include <boost/type_traits/is_same.hpp>
 #include <boost/static_assert.hpp>

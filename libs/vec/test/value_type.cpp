@@ -4,7 +4,7 @@
 #include <boost/test/minimal.hpp>
 #include <boost/type_traits/is_same.hpp>
 
-#include <accelerator/vec/type_tratis/value_type.hpp>
+#include <accelerator/vec/type_traits/value_type.hpp>
 
 struct my_vec{
 	typedef float value_type;
