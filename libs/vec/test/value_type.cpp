@@ -1,7 +1,6 @@
 // accelerator-vec-library
 // Copyright (c) 2010 osyo-manga : http://d.hatena.ne.jp/osyo-manga/
 // 
-
 #include <boost/test/minimal.hpp>
 #include <boost/type_traits/is_same.hpp>
 
@@ -41,7 +40,7 @@ struct value_type<my_vec3>{
 };
 */
 
-} }
+} }  // namespace accelerator{ namespace vec{
 
 ACCELERATOR_VEC_VALUE_TYPE(my_vec3, double)
 
