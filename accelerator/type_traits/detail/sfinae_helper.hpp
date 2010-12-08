@@ -12,6 +12,12 @@ struct sfinae_helper{
 	typedef void type;
 };
 
+template<int N>
+struct sfinae_helper_value{
+	typedef void type;
+};
+
+
 } }  // namespace accelerator{ namespace detail{
 
 #endif // _ACCELERATOR_TYPE_TRAITS_SFINAE_HELPER_H_
