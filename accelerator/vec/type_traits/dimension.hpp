@@ -9,7 +9,7 @@
 #include "has_dimension.hpp"
 
 #include <boost/mpl/int.hpp>
-#include <boost/utility/enable_if.hpp>
+#include <boost/utility/enable_if.hpp>0
 
 namespace accelerator { namespace vec {
 
@@ -24,7 +24,6 @@ struct dimension_impl{
 
 
 template<typename T>
-//struct dimension_impl<T, typename sfinae_helper_value<std::size_t, vec_traits<T>::dimension>::type>{
 struct dimension_impl<
 	T,
 	typename boost::enable_if<
