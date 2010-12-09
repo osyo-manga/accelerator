@@ -9,7 +9,7 @@
 #include "has_dimension.hpp"
 
 #include <boost/mpl/int.hpp>
-#include <boost/utility/enable_if.hpp>0
+#include <boost/utility/enable_if.hpp>
 
 namespace accelerator { namespace vec {
 
