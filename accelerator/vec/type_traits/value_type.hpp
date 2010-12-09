@@ -20,7 +20,6 @@ struct value_type_impl{
 };
 
 template<typename T>
-//struct value_type_impl<T, typename sfinae_helper<typename vec_traits<T>::value_type>::type>{
 struct value_type_impl<
 	T,
 	typename boost::enable_if<

@@ -5,10 +5,11 @@
 #ifndef _ACCELERATOR_VEC_DIMENSION_H_
 #define _ACCELERATOR_VEC_DIMENSION_H_
 
-#include "../../type_traits/detail/sfinae_helper.hpp"
 #include "vec_traits.hpp"
-#include <boost/mpl/int.hpp>
+#include "has_dimension.hpp"
 
+#include <boost/mpl/int.hpp>
+#include <boost/utility/enable_if.hpp>
 
 namespace accelerator { namespace vec {
 
@@ -21,8 +22,15 @@ struct dimension_impl{
 	static const std::size_t value = T::dimension;
 };
 
+
 template<typename T>
-struct dimension_impl<T, typename sfinae_helper_value<std::size_t, vec_traits<T>::dimension>::type>{
+//struct dimension_impl<T, typename sfinae_helper_value<std::size_t, vec_traits<T>::dimension>::type>{
+struct dimension_impl<
+	T,
+	typename boost::enable_if<
+		has_dimension<vec_traits<T> >
+	>::type
+>{
 	static const std::size_t value = vec_traits<T>::dimension;
 };
 
