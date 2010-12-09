@@ -5,14 +5,14 @@
 #ifndef _ACCELERATOR_VEC_TYPE_TRAITS_VALUE_TYPE_H_
 #define _ACCELERATOR_VEC_TYPE_TRAITS_VALUE_TYPE_H_
 
-#include "../../type_traits/detail/sfinae_helper.hpp"
 #include "vec_traits.hpp"
+#include "has_value_type.hpp"
+
+#include <boost/utility/enable_if.hpp>
 
 namespace accelerator{ namespace vec{
 
 namespace detail{
-
-using accelerator::detail::sfinae_helper;
 
 template<typename T, typename U = void>
 struct value_type_impl{
@@ -20,7 +20,13 @@ struct value_type_impl{
 };
 
 template<typename T>
-struct value_type_impl<T, typename sfinae_helper<typename vec_traits<T>::value_type>::type>{
+//struct value_type_impl<T, typename sfinae_helper<typename vec_traits<T>::value_type>::type>{
+struct value_type_impl<
+	T,
+	typename boost::enable_if<
+		has_value_type<vec_traits<T> >
+	>::type
+>{
 	typedef typename vec_traits<T>::value_type type;
 };
 
