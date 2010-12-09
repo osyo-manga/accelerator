@@ -19,7 +19,7 @@ using accelerator::detail::sfinae_helper_value;
 
 template<typename T, typename U = void>
 struct dimension_impl{
-	static const std::size_t value = T::dimension;
+	static const dimension_type value = T::dimension;
 };
 
 
@@ -30,7 +30,7 @@ struct dimension_impl<
 		has_dimension<vec_traits<T> >
 	>::type
 >{
-	static const std::size_t value = vec_traits<T>::dimension;
+	static const dimension_type value = vec_traits<T>::dimension;
 };
 
 }  // namespace detail

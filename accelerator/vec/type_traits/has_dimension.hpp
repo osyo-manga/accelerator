@@ -10,6 +10,8 @@
 
 namespace accelerator { namespace vec {
 
+typedef std::size_t dimension_type;
+
 namespace detail{
 
 using accelerator::detail::sfinae_helper_value;
@@ -20,7 +22,7 @@ struct has_dimension_impl{
 };
 
 template<typename T>
-struct has_dimension_impl<T, typename sfinae_helper_value<std::size_t, T::dimension>::type>{
+struct has_dimension_impl<T, typename sfinae_helper_value<dimension_type, T::dimension>::type>{
 	static const int value = true;
 };
 
