@@ -17,4 +17,5 @@ test-suite "accelerator-vec" :
     [ run has_value_type.cpp ]
     [ run dimension.cpp ]
     [ run has_dimension.cpp ]
+    [ run has_iterator.cpp ]
     ;
