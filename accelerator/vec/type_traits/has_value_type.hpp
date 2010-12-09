@@ -7,28 +7,11 @@
 
 #include "../../type_traits/detail/sfinae_helper.hpp"
 
-#include <boost/mpl/bool.hpp>
+#include <boost/mpl/has_xxx.hpp>
 
 namespace accelerator { namespace vec {
 
-namespace detail{
-
-using accelerator::detail::sfinae_helper;
-
-template<typename T, typename U = void>
-struct has_value_type_impl{
-    static const bool value = false;
-};
-
-template<typename T>
-struct has_value_type_impl<T, typename sfinae_helper<typename T::value_type>::type>{
-    static const bool value = true;
-};
-
-}  // namespace detail
-
-template<typename T>
-struct has_value_type : public boost::mpl::bool_<detail::has_value_type_impl<T>::value>{};
+BOOST_MPL_HAS_XXX_TRAIT_DEF(value_type)
 
 } }  // namespace accelerator { namespace vec {
 
