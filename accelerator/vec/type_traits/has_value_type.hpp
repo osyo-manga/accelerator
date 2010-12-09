@@ -5,13 +5,11 @@
 #ifndef _ACCELERATOR_VEC_HAS_VALUE_TYPE_H_
 #define _ACCELERATOR_VEC_HAS_VALUE_TYPE_H_
 
-#include "../../type_traits/detail/sfinae_helper.hpp"
-
-#include <boost/mpl/has_xxx.hpp>
+#include "../../type_traits/detail/has_xxx.hpp"
 
 namespace accelerator { namespace vec {
 
-BOOST_MPL_HAS_XXX_TRAIT_DEF(value_type)
+ACCELERATOR_DETAIL_HAS_XXX_TRAIT_DEF(value_type)
 
 } }  // namespace accelerator { namespace vec {
 
